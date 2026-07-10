@@ -3,7 +3,7 @@
 > A lightweight applicant tracking system: a Kanban pipeline, role-based
 > access, and hiring analytics for small recruiting teams.
 
-[![CI](https://github.com/YOUR_USERNAME/hiretrack/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/hiretrack/actions)
+[![CI](https://github.com/datsaryan/hiretrack)](https://github.com/datsaryan/hiretrack/actions)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 **Live demo →** _add your deployed URL here_
