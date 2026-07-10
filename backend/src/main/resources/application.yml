@@ -1,0 +1,33 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: hiretrack-backend
+  datasource:
+    url: ${DATABASE_URL:jdbc:postgresql://localhost:5432/hiretrack}
+    username: ${DATABASE_USERNAME:hiretrack}
+    password: ${DATABASE_PASSWORD:hiretrack}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    open-in-view: false
+    properties:
+      hibernate:
+        format_sql: true
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+
+app:
+  jwt:
+    secret: ${JWT_SECRET:change-this-to-a-long-random-secret-in-production-env-var}
+    access-token-ttl-minutes: ${JWT_ACCESS_TTL_MIN:15}
+    refresh-token-ttl-days: ${JWT_REFRESH_TTL_DAYS:7}
+  cors:
+    allowed-origins: ${CORS_ALLOWED_ORIGINS:http://localhost:5173}
+
+logging:
+  level:
+    com.hiretrack: INFO

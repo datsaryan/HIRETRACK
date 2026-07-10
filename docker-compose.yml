@@ -1,0 +1,18 @@
+# Local dev database only. Run: docker compose up -d
+# Then run the backend with mvn spring-boot:run (it reads .env via your IDE/shell,
+# or export the vars manually / use a tool like direnv).
+version: "3.9"
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: hiretrack
+      POSTGRES_USER: hiretrack
+      POSTGRES_PASSWORD: hiretrack
+    ports:
+      - "5432:5432"
+    volumes:
+      - hiretrack_pgdata:/var/lib/postgresql/data
+
+volumes:
+  hiretrack_pgdata:
